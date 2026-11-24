@@ -2,7 +2,7 @@
 ### A Data Analytics Project Using Excel, SQL Server and Power BI
 
 ## 📌 Project Overview
-An end-to-end data analytics project involving hospital admissions and billing data. The dataset initially contained **55,501 records **; I cleaned it in Microsoft Excel by removing duplicates, resulting in **50,000 records ** for analysis.
+An end-to-end data analytics project involving hospital admissions and billing data. The dataset initially contained **55,501 records**; I cleaned it in Microsoft Excel by removing duplicates, resulting in **50,000 records** for analysis.
 
 I used SQL Server to query the cleaned dataset and answer eight business questions, and Power BI to develop an interactive dashboard exploring patient admissions, billing costs, length of hospital stay, and the distribution of medical test results.
 
