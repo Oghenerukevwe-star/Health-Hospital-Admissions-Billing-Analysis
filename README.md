@@ -59,7 +59,7 @@ SQL Server Management Studio (SSMS) was then used to investigate the dataset and
 
 The dataset used for this analysis contains hospital admission and billing records covering patient demographics, medical conditions, admission details, hospital information, insurance coverage, medication and diagnostic test results.
 
-The original dataset consisted of *55,501 records and 15 columns. Following data cleaning and duplicate removal in Microsoft Excel, the dataset was reduced to **50,000 records*, which formed the basis for the subsequent SQL analysis and Power BI dashboard development.
+The original dataset consisted of *55,501 records* and 15 columns. Following data cleaning and duplicate removal in Microsoft Excel, the dataset was reduced to *50,000 records*, which formed the basis for the subsequent SQL analysis and Power BI dashboard development.
 
 ### Dataset Variables
 
