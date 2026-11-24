@@ -15,21 +15,42 @@ I used SQL Server to query the cleaned dataset and answer eight business questio
 
 ## 📑 Table of Contents
 
-1. [Project Overview](#project-overview)
-2. [Business Questions](#business-questions)
-3. [Dataset](#dataset)
-4. [Tools and Skills](#tools-and-skills)
-5. [Data Cleaning and Preparation](#data-cleaning-and-preparation)
-6. [SQL Analysis](#sql-analysis)
-7. [Data Model and DAX Measures](#data-model-and-dax-measures)
-8. [Dashboard](#dashboard)
-9. [Key Insights](#key-insights)
-10. [Recommendations](#recommendations)
-11. [Limitations](#limitations)
-12. [Repository Structure](#repository-structure)
-13. [How to Use](#how-to-use)
-14. [Conclusion](#conclusion)
-15. [Author](#author)
+1. [Introduction](#1-introduction)
+2. [Data Description](#2-data-description)
+3. [Methodology](#3-methodology)
+4. [Data Cleaning and Preparation](#4-data-cleaning-and-preparation)
+5. [SQL Analysis](#5-sql-analysis)
+6. [Data Model and DAX Measures](#6-data-model-and-dax-measures)
+7. [Dashboard and Analysis](#7-dashboard-and-analysis)
+8. [Key Insights](#8-key-insights)
+9. [Recommendations](#9-recommendations)
+10. [Limitations](#10-limitations)
+11. [Conclusion](#11-conclusion)
+12. [Author](#12-author)
+
+
+## 1. Introduction
+
+### Background and Context
+
+Every hospital admission creates a record, but those records tell a much bigger story than the number of patients treated. They capture how patients access healthcare, the conditions they are admitted for, the duration of their hospital stays, the diagnostic tests they undergo, and the financial costs associated with their treatment.
+When examined collectively, these records can reveal patterns in hospital utilisation, patient admissions and billing activities that may otherwise go unnoticed.
+
+This project explores those patterns through an analysis of hospital admissions and billing data, shifting the focus from individual patient records to a broader view of hospital activity and financial performance.
+
+### Purpose of the Study
+
+The objective of this project was to investigate what the hospital data reveals about patient admissions, billing costs, length of stay, and medical test results, using data analytics to answer eight business questions.
+
+The analysis began with **55,501 records**, which were examined and cleaned in Microsoft Excel, resulting in a final dataset of **50,000 records**.
+
+SQL Server Management Studio (SSMS) was then used to investigate the dataset and answer the eight business questions. Finally, Power BI was used to develop an interactive dashboard that brings the findings together and makes the results easier to explore and interpret.
+
+*Tools Used:*
+
+- *Microsoft Excel:* Data cleaning, preparation, and initial exploration.
+- *SQL Server Management Studio (SSMS):* Data querying, aggregation, and business analysis.
+- *Power BI:* Data modelling, DAX calculations and interactive visualisation.   
 
 ## 2. Business Questions
 The analysis answered the following business questions:
