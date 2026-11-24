@@ -1,5 +1,12 @@
 # Health-Hospital-Admissions-Billing-Analysis
-**An end-to-end analytics project: hospital admissions data containing 55,501 records, thoroughly cleaned in Excel by removing duplicates, reducing the records to 50,000 records, and queried with SQL to answer eight business questions, and visualised in Power BI to show who is admitted, what it costs, how long patients stay, and how test results are distributed.**
+### A Data Analytics Project Using Excel, SQL Server and Power BI
+
+## 📌 Project Overview
+An end-to-end data analytics project involving hospital admissions and billing data. The dataset initially contained *55,501 records, which were cleaned in Microsoft Excel by removing duplicate records, resulting in **50,000 records* for analysis.
+
+SQL Server was used to query the cleaned dataset and answer eight business questions, while Power BI was used to develop an interactive dashboard exploring patient admissions, billing costs, length of hospital stay, and the distribution of medical test results.
+
+
 ## 📊 Key Metrics at a Glance
 
 | Total Admissions | Avg. Length of Stay | Average Billing per Patient | Total Billing | Cost per Day |
