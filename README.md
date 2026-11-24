@@ -34,7 +34,7 @@ I used SQL Server to query the cleaned dataset and answer eight business questio
 ### Background and Context
 
 Every hospital admission creates a record, but those records tell a much bigger story than the number of patients treated. They capture how patients access healthcare, the conditions they are admitted for, the duration of their hospital stays, the diagnostic tests they undergo, and the financial costs associated with their treatment.
-When examined collectively, these records can reveal patterns in hospital utilisation, patient admissions and billing activities that may otherwise go unnoticed.
+When examined collectively, these records can reveal patterns in hospital utilisation, patient admissions, and billing activities that may otherwise go unnoticed.
 
 This project explores those patterns through an analysis of hospital admissions and billing data, shifting the focus from individual patient records to a broader view of hospital activity and financial performance.
 
@@ -82,6 +82,19 @@ The dataset contains the following 15 columns:
 | Discharge Date | Date the patient was discharged |
 | Medication | Medication prescribed to the patient |
 | Test Results | Outcome of the patient's medical tests |
+
+### Key Statistics
+
+| Statistic | Value |
+|:---|---:|
+| Original Records | 55,501 |
+| Final Records | 50,000 |
+| Columns | 15 |
+| Records Removed | 5,501 |
+| Date Range | [Insert Date Range] |
+| Number of Hospitals | 38,079 |
+| Number of Medical Conditions | [Insert Figure] |
+| Total Billing Amount | [Insert Figure] |
 
 
 ## 2. Business Questions
