@@ -31,3 +31,16 @@ I used SQL Server to query the cleaned dataset and answer eight business questio
 14. [Conclusion](#conclusion)
 15. [Author](#author)
 
+## 2. Business Questions
+The analysis answered the following business questions:
+1. How many admissions are there per medical condition, and which condition is most common?
+2. What is the average and total billing amount per medical condition?
+3. What is the average length of stay per admission type (Emergency, Elective, Urgent)?
+4. Which insurance provider covers the highest total billing?
+5. Which 10 hospitals have the highest total billing?
+6. How do admissions trend by year and month?
+7. What share of test results are Normal, Abnormal, and Inconclusive per medical condition?
+8. Which age group has the highest average billing?
+
+
+
