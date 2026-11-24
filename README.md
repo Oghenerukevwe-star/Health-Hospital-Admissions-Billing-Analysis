@@ -50,7 +50,39 @@ SQL Server Management Studio (SSMS) was then used to investigate the dataset and
 
 - *Microsoft Excel:* Data cleaning, preparation, and initial exploration.
 - *SQL Server Management Studio (SSMS):* Data querying, aggregation, and business analysis.
-- *Power BI:* Data modelling, DAX calculations and interactive visualisation.   
+- *Power BI:* Data modelling, DAX calculations, and interactive visualisation.
+
+
+## 2. Data Description
+
+### Dataset Overview
+
+The dataset used for this analysis contains hospital admission and billing records covering patient demographics, medical conditions, admission details, hospital information, insurance coverage, medication and diagnostic test results.
+
+The original dataset consisted of *55,501 records and 15 columns. Following data cleaning and duplicate removal in Microsoft Excel, the dataset was reduced to **50,000 records*, which formed the basis for the subsequent SQL analysis and Power BI dashboard development.
+
+### Dataset Variables
+
+The dataset contains the following 15 columns:
+
+| Column | Description |
+|:---|:---|
+| Name | Patient's name |
+| Age | Patient's age |
+| Gender | Patient's gender |
+| Blood Type | Patient's blood group |
+| Medical Condition | Medical condition associated with the patient |
+| Date of Admission | Date the patient was admitted |
+| Doctor | Name of the attending doctor |
+| Hospital | Name of the hospital |
+| Insurance | Health insurance provider |
+| Billing Amount | Total amount billed for the patient's admission |
+| Room Number | Room assigned to the patient |
+| Admission Type | Classification of admission (Emergency, Urgent, or Elective) |
+| Discharge Date | Date the patient was discharged |
+| Medication | Medication prescribed to the patient |
+| Test Results | Outcome of the patient's medical tests |
+
 
 ## 2. Business Questions
 The analysis answered the following business questions:
