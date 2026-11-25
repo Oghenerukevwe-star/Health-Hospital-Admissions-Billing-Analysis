@@ -534,13 +534,14 @@ Page 2: Details
 |:---|:---|
 | Admissions per condition | Arthritis is highest (8,439); Asthma is lowest (8,272), a gap of 167. |
 | Billing per condition | Diabetes has the highest total billing ($215.09M) and Cancer the lowest ($209.27M). Average bills range from $25,284 (Cancer) to $25,838 (Obesity). |
+| Stay per admission type |	Emergency 15.60 days, Elective 15.52, Urgent 15.39. |
+| Top insurer | Medicare, at $257.75M, narrowly ahead of Cigna ($257.6M). |
+| Top hospital by billing | Smith Ltd, at $1.81M. |
+| Monthly trend | Typically 800 to 900 admissions a month. August is the busiest month of the year (4,353 admissions across the period) and February the quietest (3,824). |
+| Test results | Abnormal 33.54%, Normal 33.37%, Inconclusive 33.09% overall. Abnormal is the largest share in four of six conditions. |
+| Age groups | Patients aged 65+ account for the most admissions (14,678). The 51-65 group has the highest average bill ($25,689.45), but all four groups are within 1%. |
 
 
-Admissions per condition	Arthritis is highest (8,439); Asthma is lowest (8,272), a gap of 167.
-Billing per condition	Diabetes has the highest total billing ($215.09M) and Cancer the lowest ($209.27M). Average bills range from $25,284 (Cancer) to $25,838 (Obesity).
-Stay per admission type	Emergency 15.60 days, Elective 15.52, Urgent 15.39.
-Top insurer	Medicare, at $257.75M, narrowly ahead of Cigna ($257.6M).
-Top hospital by billing	Smith Ltd, at $1.81M.
-Monthly trend	Typically 800 to 900 admissions a month. August is the busiest month of the year (4,353 admissions across the period) and February the quietest (3,824).
-Test results	Abnormal 33.54%, Normal 33.37%, Inconclusive 33.09% overall. Abnormal is the largest share in four of six conditions.
-Age groups	Patients aged 65+ account for the most admissions (14,678). The 51-65 group has the highest average bill ($25,689.45), but all four groups are within 1%
+
+
+S
