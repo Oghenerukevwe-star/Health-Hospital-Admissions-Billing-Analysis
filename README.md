@@ -308,3 +308,83 @@ The query returned one record, identifying the insurance provider with the highe
 Overall, the findings show that Medicare accounted for the highest cumulative billing among the insurance providers in the dataset.
 
 
+#### Question 5: Top 10 Hospitals With The Highest Total Billing
+
+*Business Question:* Which 10 hospitals have the highest total billing?
+
+SELECT TOP 10
+    Hospital,
+    SUM(Billing_Amount) AS TotalBilling
+FROM [Pjt (health)]
+WHERE Hospital IS NOT NULL
+  AND Billing_Amount >= 0
+GROUP BY Hospital
+ORDER BY TotalBilling DESC;
+
+*Query Explanation:*
+
+SELECT TOP 10: Retrieves only the 10 hospitals with the highest total billing amounts.
+SUM(Billing_Amount): Calculates the cumulative billing amount associated with each hospital.
+FROM: Specifies [Pjt (health)] as the source table.
+WHERE: Excludes records with missing hospital names and negative billing amounts to focus on positive billing records.
+GROUP BY: Groups records according to their hospital names before calculating the total billing amount.
+ORDER BY DESC: Sorts the results by total billing, from the highest to the lowest, ensuring that the 10 hospitals with the highest cumulative billing are returned.
+
+*Query Results:*
+The query returned the top 10 hospitals ranked according to their total billing amounts, excluding records with negative billing values.
+
+*Key Findings:*
+Smith Ltd recorded the highest total billing of $1,812,861.63.
+Smith LLC ranked second with $1,563,270.47.
+Smith PLC followed with $1,519,573.20.
+Brown Inc ranked fourth with $1,507,516.89.
+Johnson PLC recorded $1,390,627.15.
+Smith Inc ranked sixth with $1,350,709.35.
+Johnson Inc followed with $1,348,487.63.
+Johnson LLC recorded $1,300,312.51.
+Williams LLC ranked ninth with $1,265,223.05.
+Johnson Ltd recorded the lowest total billing among the top 10 hospitals, at $1,157,531.44.
+Overall, Smith Ltd recorded the highest cumulative billing among the hospitals analysed, while Johnson Ltd occupied the tenth position in the ranking.
+
+#### Question 6: Admission Trend by Year and Month
+*Business Question:* How do admissions trend by year and month?
+
+SELECT
+    YEAR(Date_of_Admission) AS AdmissionYear,
+    MONTH(Date_of_Admission) AS AdmissionMonth,
+    COUNT(*) AS AdmissionCount
+FROM [Pjt (health)]
+WHERE Date_of_Admission IS NOT NULL
+GROUP BY
+    YEAR(Date_of_Admission),
+    MONTH(Date_of_Admission)
+ORDER BY
+    AdmissionYear ASC,
+    AdmissionMonth ASC;
+
+*Query Explanation:*
+SELECT: Retrieves the admission year, admission month, and corresponding number of admissions.
+YEAR(Date_of_Admission): Extracts the year from each admission date to allow admissions to be analysed annually.
+MONTH(Date_of_Admission): Extracts the month from each admission date to allow admissions to be analysed monthly.
+COUNT(*): Counts the number of admission records within each year and month.
+FROM: Specifies [Pjt (health)] as the source table.
+WHERE: Excludes records with missing admission dates to ensure that only valid dates are included in the analysis.
+GROUP BY: Groups admission records by both year and month, allowing the number of admissions to be calculated for each month within each year.
+ORDER BY ASC: Sorts the results chronologically, starting with the earliest year and proceeding through each month.
+
+*Query Results:*
+The query returned the number of admissions recorded for each year and month, arranged in chronological order.
+
+*Query Results:*
+August 2020 recorded the highest monthly admission count, with 912 admissions.
+October 2019 followed with 905 admissions.
+July 2020 recorded 901 admissions, while August 2023 recorded 871 admissions.
+Admission volumes generally remained within the range of 800–900 admissions per month across most of the observed period.
+February generally recorded lower admission figures compared with several other months. The lowest February count was 693 admissions in 2022.
+May 2024 recorded only 190 admissions, the lowest figure in the dataset provided.
+Overall, the results suggest that hospital admissions remained relatively stable across the observed years, with most months recording between 800 and 900 admissions. However, the sharp decline to 190 admissions in May 2024 requires further investigation.
+
+*Data Observation:* The dataset covers only May–December 2019 and January–May 2024, rather than complete calendar years. Also, the unusually low May 2024 figure may indicate incomplete monthly records. Therefore, yearly totals should not be compared directly without accounting for these differences.
+
+
+
