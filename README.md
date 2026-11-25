@@ -19,13 +19,13 @@ I used SQL Server to query the cleaned dataset and answer eight business questio
 2. [Data Description](#2-data-description)
 3. [Methodology](#3-methodology)
 4. [SQL Analysis](#4-sql-analysis)
-6. [Data Model and DAX Measures](#6-data-model-and-dax-measures)
-7. [Dashboard and Analysis](#7-dashboard-and-analysis)
-8. [Key Insights](#8-key-insights)
-9. [Recommendations](#9-recommendations)
-10. [Limitations](#10-limitations)
-11. [Conclusion](#11-conclusion)
-12. [Author](#12-author)
+5. [Data Model and DAX Measures](#6-data-model-and-dax-measures)
+6. [Dashboard and Analysis](#7-dashboard-and-analysis)
+7. [Key Insights](#8-key-insights)
+8. [Recommendations](#9-recommendations)
+9. [Limitations](#10-limitations)
+10. [Conclusion](#11-conclusion)
+11. [Author](#12-author)
 
 
 ## 1. Introduction
@@ -541,7 +541,51 @@ Page 2: Details
 | Test results | Abnormal 33.54%, Normal 33.37%, Inconclusive 33.09% overall. Abnormal is the largest share in four of six conditions. |
 | Age groups | Patients aged 65+ account for the most admissions (14,678). The 51-65 group has the highest average bill ($25,689.45), but all four groups are within 1%. |
 
+## 7. Recommendations
+
+These are suggestions drawn from the patterns above, not proven causes.
+
+	•	Plan capacity for the busier months. Admissions peak in late summer, so staffing and bed planning could be checked against that pattern.
+	•	Look at the older age group. Patients aged 65+ account for the most admissions, so services for that group deserve attention.
+	•	Review the negative billing entries. The 96 negative amounts should be checked with the billing team to confirm whether they are refunds or entry errors.
+	•	Add a patient ID and cost drivers in future data. This would allow unique patients, readmissions, and treatment-level billing analysis.
+
+## 8. Limitations
+
+•	The dataset appears to be synthetic. The near-even spread across conditions, insurers, admission types, and age groups, and the very large number of distinct names, doctors, and hospitals, are typical of generated data. The findings describe this dataset and should not be generalised to real hospitals.
+	•	Differences between groups are small, so they should not be over-interpreted.
+	•	Total Patients counts patient records (admissions). The data has no patient ID, so unique patients cannot be counted reliably.
+	•	Hospital names are mostly unique, so the top 10 hospitals table shows the largest individual hospital totals, not a stable ranking.
+	•	The 96 negative billing amounts are unexplained and are excluded from billing measures.
+	•	May 2019 and May 2024 are partial months.
+
+## 10. Repository Structure
+
+
+├── README.md
+├── data/
+│   └── Project_health_clean_excel_data.xlsx
+├── sql/
+│   └── queries.sql
+├── dashboard/
+│   └── Health power bi project.pbix
+└── images/
+    ├── overview.png
+    └── details.png
+
+## 11. Conclusion
+
+This project took hospital admissions and billing data from raw records to a finished dashboard. Excel was used to clean the data, SQL Server to answer eight business questions, and Power BI to present the results in an interactive report.
+
+The main finding is that the data is very evenly spread. No single condition, insurer, admission type, or age group stands out, and monthly admissions stay steady. The dashboard gives a clear, filterable view of admissions, billing, length of stay, and test results, and it is a solid base for deeper analysis once patient-level identifiers and cost drivers are available.
+
+## 12. Author
+
+**Oghenerukevwe Success Asore**
+Linkedin:
+Portfolio:
 
 
 
-S
+
+
