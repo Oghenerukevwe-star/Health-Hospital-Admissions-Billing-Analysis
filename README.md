@@ -63,7 +63,7 @@ The original dataset consisted of *55,501 records* and 15 columns. Following dat
 
 ### Dataset Variables
 
-The dataset contains the following 15 columns:
+The dataset initially contained 15 columns covering patient demographics, medical conditions, hospital information, admission details and billing contains the following 15 columns:
 
 | Column | Description |
 |:---|:---|
@@ -82,6 +82,8 @@ The dataset contains the following 15 columns:
 | Discharge Date | Date the patient was discharged |
 | Medication | Medication prescribed to the patient |
 | Test Results | Outcome of the patient's medical tests |
+| Length of Stay | Number of days between admission and discharge |
+| Age Group | Categorisation of patients into age groups |
 
 ### Key Statistics
 
@@ -91,10 +93,10 @@ The dataset contains the following 15 columns:
 | Final Records | 50,000 |
 | Columns | 15 |
 | Records Removed | 5,501 |
-| Date Range | [Insert Date Range] |
+| Date Range | 1 to 30 days |
 | Number of Hospitals | 38,079 |
-| Number of Medical Conditions | [Insert Figure] |
-| Total Billing Amount | [Insert Figure] |
+| Number of Medical Conditions | 6 |
+| Total Billing Amount | 1.28bn |
 
 
 ## 2. Business Questions
