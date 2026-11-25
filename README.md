@@ -109,6 +109,17 @@ Two additional columns were created during data preparation to support more deta
 | Total Billing Amount | 1.28bn |
 
 
+### Data Quality
+
+Data quality checks and preparation were carried out in Microsoft Excel before the dataset was imported into SQL Server for analysis. The following checks and actions were performed:
+
+* Duplicate records: Identified and removed 5,501 duplicate entries by comparing records across all 15 original columns, reducing the dataset from 55,501 to 50,000 unique records.
+* Data consistency: Reviewed key fields, including patient demographics, admission and discharge dates, billing amounts, and medical information.
+* Derived variables: Created two additional analytical columns, Length of Stay and Age Group, increasing the dataset from 15 to 17 columns.
+
+After removing duplicate records, the prepared dataset contained 50,000 records and 17 columns. It was subsequently used for SQL analysis and Power BI dashboard development.
+
+
 ## 2. Business Questions
 The analysis answered the following business questions:
 1. How many admissions are there per medical condition, and which condition is most common?
