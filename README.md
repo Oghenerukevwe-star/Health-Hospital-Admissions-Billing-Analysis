@@ -363,6 +363,7 @@ ORDER BY
     AdmissionMonth ASC;
 
 *Query Explanation:*
+
 SELECT: Retrieves the admission year, admission month, and corresponding number of admissions.
 YEAR(Date_of_Admission): Extracts the year from each admission date to allow admissions to be analysed annually.
 MONTH(Date_of_Admission): Extracts the month from each admission date to allow admissions to be analysed monthly.
@@ -386,5 +387,82 @@ Overall, the results suggest that hospital admissions remained relatively stable
 
 *Data Observation:* The dataset covers only May–December 2019 and January–May 2024, rather than complete calendar years. Also, the unusually low May 2024 figure may indicate incomplete monthly records. Therefore, yearly totals should not be compared directly without accounting for these differences.
 
+#### Question 7: Distribution of Test Results by Medical Condition
+*Business Question:* What share of test results are Normal, Abnormal, and Inconclusive per medical condition?
 
+SELECT
+    Medical_Condition,
+    COUNT(*) AS TotalPatients,
+    CAST(
+        SUM(CASE WHEN Test_Results = 'Normal' THEN 1 ELSE 0 END) * 100.0
+        / COUNT(*) AS DECIMAL(10, 2)
+    ) AS NormalPercentage,
+    CAST(
+        SUM(CASE WHEN Test_Results = 'Abnormal' THEN 1 ELSE 0 END) * 100.0
+        / COUNT(*) AS DECIMAL(10, 2)
+    ) AS AbnormalPercentage,
+    CAST(
+        SUM(CASE WHEN Test_Results = 'Inconclusive' THEN 1 ELSE 0 END) * 100.0
+        / COUNT(*) AS DECIMAL(10, 2)
+    ) AS InconclusivePercentage
+FROM [Pjt (health)]
+WHERE Medical_Condition IS NOT NULL
+  AND Test_Results IS NOT NULL
+GROUP BY Medical_Condition
+ORDER BY Medical_Condition ASC;
 
+*Query Explanation:*
+
+SELECT: Retrieves each medical condition alongside the total number of patient records and the percentage distribution of test results.
+COUNT(*): Counts the total number of records for each medical condition.
+CASE WHEN: Checks each test result and assigns a value of 1 when it matches the specified category (Normal, Abnormal or Inconclusive), and 0 otherwise.
+SUM(): Adds the matching values for each test-result category to determine the number of records in that category.
+SUM(...) * 100.0 / COUNT(*): Calculates the percentage of each test-result category by dividing its count by the total records for that medical condition and multiplying by 100. The use of 100.0 ensures decimal calculation rather than integer division.
+CAST(... AS DECIMAL(10,2)): Formats the calculated percentages to two decimal places.
+FROM: Specifies [Pjt (health)] as the source table.
+WHERE: Excludes records with missing medical condition or test result values to ensure that only complete records are included in the analysis.
+GROUP BY: Groups records according to their medical condition before calculating the total records and percentage distribution of test results.
+ORDER BY: Sorts the results alphabetically by medical condition.
+
+*Query Results:*
+
+The query returns the total number of records and the percentage of Normal, Abnormal, and Inconclusive test results for each medical condition.
+
+*Key Findings:*
+Arthritis: Abnormal results recorded the highest share at 34.46%, while Normal results accounted for 32.49%.
+Asthma: Normal results had the highest share at 34.50%, followed by Inconclusive results at 32.89%.
+Cancer: Abnormal results recorded the highest share at 33.73%.
+Diabetes: Abnormal results had the highest share at 33.77%, followed by Normal results at 33.24%.
+Hypertension: Normal results recorded the highest share at 33.77%, while Inconclusive results accounted for 33.53%.
+Obesity: Abnormal results had the highest share at 33.98%.
+
+Abnormal results recorded the highest percentage in four of the six medical conditions: Arthritis, Cancer, Diabetes, and Obesity. Normal results had the highest share for Asthma and Hypertension.
+
+The percentages are relatively close across all three test-result categories, suggesting a fairly balanced distribution of test outcomes across the medical conditions.
+
+#### Question 8: Age Group With The Highest Average Billing
+*Business Question:* Which age group has the highest average billing?
+
+SELECT TOP 1
+    Age_Group,
+    CAST(AVG(Billing_Amount) AS DECIMAL(10, 2)) AS AverageBilling
+FROM [Pjt (health)]
+WHERE Age_Group IS NOT NULL
+  AND Billing_Amount >= 0
+GROUP BY Age_Group
+ORDER BY AverageBilling DESC;
+
+*Query Explanation:*
+
+SELECT TOP 1: Retrieves only the age group with the highest average billing amount.
+AVG(Billing_Amount): Calculates the average billing amount for each age group.
+CAST(... AS DECIMAL(10,2)): Formats the calculated average billing amount to two decimal places.
+FROM: Specifies [Pjt (health)] as the source table.
+WHERE: Excludes records with missing age-group values and negative billing amounts to focus on positive billing records.
+GROUP BY: Groups records according to their age groups before calculating the average billing amount.
+ORDER BY DESC: Sorts the results by average billing, from the highest to the lowest, ensuring that the age group with the highest average billing appears first.
+
+*Query Results:* The query returned one record, identifying the age group with the highest average billing amount after excluding negative billing values.
+
+*Key Findings:*
+- Age Group 51–65 recorded the highest average billing of $25,689.45.
