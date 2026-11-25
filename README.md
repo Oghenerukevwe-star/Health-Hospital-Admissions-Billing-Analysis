@@ -531,8 +531,9 @@ Page 2: Details
 
 
 | Question | Finding |
-|:---|---:|
-| Admissions per condition | Arthritis is highest (8,439); Asthma is lowest (8,272), a gap of 167.
+|:---|:---|
+| Admissions per condition | Arthritis is highest (8,439); Asthma is lowest (8,272), a gap of 167. |
+| Billing per condition | Diabetes has the highest total billing ($215.09M) and Cancer the lowest ($209.27M). Average bills range from $25,284 (Cancer) to $25,838 (Obesity). |
 
 
 Admissions per condition	Arthritis is highest (8,439); Asthma is lowest (8,272), a gap of 167.
