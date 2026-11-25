@@ -63,7 +63,9 @@ The original dataset consisted of *55,501 records* and 15 columns. Following dat
 
 ### Dataset Variables
 
-The dataset initially contained 15 columns covering patient demographics, medical conditions, hospital information, admission details and billing contains the following 15 columns:
+The dataset initially contained 15 columns covering patient demographics, medical conditions, hospital information, admission details and billing records. 
+
+During data preparation, two additional columns were created to support further analysis:
 
 | Column | Description |
 |:---|:---|
@@ -85,13 +87,21 @@ The dataset initially contained 15 columns covering patient demographics, medica
 | Length of Stay | Number of days between admission and discharge |
 | Age Group | Categorisation of patients into age groups |
 
+### Derived Columns
+
+Two additional columns were created during data preparation to support more detailed analysis.
+
+**Length of Stay**: Calculated using the difference between the discharge date and admission date. This column supports the analysis of patient hospitalisation duration.
+
+**Age Group**: Created by categorizing patients into different age ranges to facilitate demographic analysis and comparison of admission patterns across age groups.
+
 ### Key Statistics
 
 | Statistic | Value |
 |:---|---:|
 | Original Records | 55,501 |
 | Final Records | 50,000 |
-| Columns | 15 |
+| Columns | 17 |
 | Records Removed | 5,501 |
 | Date Range | 1 to 30 days |
 | Number of Hospitals | 38,079 |
