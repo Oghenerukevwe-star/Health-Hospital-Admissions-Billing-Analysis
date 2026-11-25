@@ -2,7 +2,7 @@
 ### A Data Analytics Project Using Excel, SQL Server, and Power BI
 
 ## 📌 Project Overview
-An end-to-end data analytics project involving hospital admissions and billing data. The dataset initially contained **55,501 records**; I cleaned it in Microsoft Excel by removing duplicates, resulting in **50,000 records** for analysis.
+An end-to-end data analytics project involving hospital admissions and billing data. The dataset initially contained **55,500 records**; I cleaned it in Microsoft Excel by removing duplicates, resulting in **49,000 records** for analysis.
 
 I used SQL Server to query the cleaned dataset and answer eight business questions, and Power BI to develop an interactive dashboard exploring patient admissions, billing costs, length of hospital stay, and the distribution of medical test results.
 
@@ -62,7 +62,7 @@ The dataset used for this analysis was obtained from Kaggle:
 
 The dataset contains patient demographics, medical conditions, hospital admission details, billing information, medication records, and test results.
 
-The original dataset consisted of *55,501 records* and 15 columns. Following data cleaning and duplicate removal in Microsoft Excel, the dataset was reduced to *50,000 records*, which formed the basis for the subsequent SQL analysis and Power BI dashboard development.
+The original dataset consisted of *55,500 records* and 15 columns. Following data cleaning and duplicate removal in Microsoft Excel, the dataset was reduced to *49,000 records*, which formed the basis for the subsequent SQL analysis and Power BI dashboard development.
 
 ### Dataset Variables
 
@@ -102,9 +102,10 @@ Two additional columns were created during data preparation to support more deta
 
 | Statistic | Value |
 |:---|---:|
-| Original Records | 55,501 |
-| Final Records | 50,000 |
-| Columns | 17 |
+| Original Records | 55,500 |
+| Final Records | 49,999 |
+| Original Columns | 15 |
+| Final Columns | 17 |
 | Records Removed | 5,501 |
 | Date Range | 1 to 30 days |
 | Number of Hospitals | 38,079 |
@@ -211,7 +212,7 @@ SELECT: Retrieves each medical condition alongside its average and total billing
 AVG(Billing_Amount): Calculates the average billing amount for each medical condition.
 SUM(Billing_Amount): Calculates the cumulative billing amount associated with each medical condition.
 CAST(... AS DECIMAL(18,2)): Formats the average and total billing amounts to two decimal places.
-FROM: Specifies [Pjt (health)] as the source table.
+FROM: Specifies Pjt (health) as the source table.
 WHERE: Excludes records with missing medical condition values.
 GROUP BY: Groups records according to their medical condition before calculating the average and total billing.
 ORDER BY DESC: Sorts the results by total billing, from the highest to the lowest.
@@ -226,8 +227,6 @@ The query returned the average and total billing amounts for each medical condit
 
 The query returned the average and total positive billing amounts for the six medical conditions, excluding records with negative billing values.
 
-*Key Findings:*
-
 - *Diabetes* recorded the highest total billing of $215,093,967.17.
 - *Arthritis* followed with $215,083,225.47.
 - *Obesity* recorded $213,809,775.59 in total billing.
@@ -237,6 +236,75 @@ The query returned the average and total positive billing amounts for the six me
 Overall, the findings show that Diabetes accounted for the highest cumulative billing among the six medical conditions after excluding negative billing records.
 
 
+#### Question 3: Average Length of Stay per Admission Type
 
+*Business Question:* What is the average length of stay per admission type (Emergency, Elective, Urgent)
+
+
+SELECT Admission_Type,
+       CAST(
+           AVG(TRY_CAST([Days_in_Admission] AS DECIMAL(10,2)))
+           AS DECIMAL(10,2)
+       ) AS AverageLengthOfStay
+FROM [Pjt (health)]
+WHERE Admission_Type IS NOT NULL
+GROUP BY Admission_Type
+ORDER BY AverageLengthOfStay;
+
+*Query Explanation:*
+SELECT: Retrieves each admission type alongside its average length of stay.
+TRY_CAST([Days_in_Admission] AS DECIMAL(10,2)): Converts the Days_in_Admission values from NVARCHAR (text) to decimal numbers so they can be used in numerical calculations. Values that cannot be converted return NULL.
+AVG(): Calculates the average length of stay for each admission type using the converted numerical values.
+CAST(... AS DECIMAL(10,2)): Formats the calculated average length of stay to two decimal places.
+AS AverageLengthOfStay: Assigns a descriptive name to the calculated average column in the query results.
+FROM: Specifies [Pjt (health)] as the source table.
+WHERE: Excludes records with missing admission type values.
+GROUP BY: Groups records according to their admission type (Emergency, Elective, and Urgent) before calculating the average length of stay.
+ORDER BY: Sorts the results by average length of stay, from the lowest to the highest.
+
+*Analytical Objective:*
+To compare the average length of hospital stay across different admission types and identify which admission category has the longest average patient stay.
+
+*Query Results:*
+The query returned the average length of stay for each admission type, ranked from the lowest to the highest average duration.
+
+*Key Findings:*
+Emergency admissions recorded the highest average length of stay at 15.60 days.
+Elective admissions followed with an average stay of 15.52 days.
+Urgent admissions recorded the lowest average length of stay at 15.39 days.
+
+Overall, the results show that Emergency admissions had the longest average hospital stay, while Urgent admissions had the shortest. However, the difference across the three admission types was relatively small, at just 0.21 days between the highest and lowest averages.
+
+#### Question 4: Insurance Provider With The Highest Total Billing
+
+*Business Question:* Which insurance provider covers the highest total billing?
+
+SELECT TOP 1
+    Insurance_Provider,
+    SUM(Billing_Amount) AS TotalBilling
+FROM [Pjt (health)]
+WHERE Insurance_Provider IS NOT NULL
+  AND Billing_Amount >= 0
+GROUP BY Insurance_Provider
+ORDER BY TotalBilling DESC;
+
+*Query Explanation:*
+SELECT TOP 1: Retrieves only the insurance provider with the highest total billing amount.
+SUM(Billing_Amount): Calculates the cumulative billing amount associated with each insurance provider.
+FROM: Specifies [Pjt (health)] as the source table.
+WHERE: Excludes records with missing insurance provider values and negative billing amounts to focus on positive billing records.
+GROUP BY: Groups records according to their insurance provider before calculating the total billing amount.
+ORDER BY DESC: Sorts the results by total billing, from the highest to the lowest, ensuring that the provider with the highest total billing appears first.
+
+
+
+*Analytical Objective:*
+To compare the total billing amounts covered by different insurance providers and identify the provider with the highest cumulative billing.
+
+*Query Results:*
+The query returned one record, identifying the insurance provider with the highest total billing after excluding negative billing amounts.
+
+*Key Findings:* Medicare recorded the highest total billing of $257,754,174.81.
+Overall, the findings show that Medicare accounted for the highest cumulative billing among the insurance providers in the dataset.
 
 
