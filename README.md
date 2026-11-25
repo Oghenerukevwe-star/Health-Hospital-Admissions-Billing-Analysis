@@ -33,8 +33,8 @@ I used SQL Server to query the cleaned dataset and answer eight business questio
 
 ### Background and Context
 
-Every hospital admission creates a record, but those records tell a much bigger story than the number of patients treated. They capture how patients access healthcare, the conditions they are admitted for, the duration of their hospital stays, the diagnostic tests they undergo, and the financial costs associated with their treatment.
-When examined collectively, these records can reveal patterns in hospital utilisation, patient admissions, and billing activities that may otherwise go unnoticed.
+Every hospital admission creates a record, but those records tell a much bigger story than the number of patients treated. They capture how patients access healthcare, the conditions for which they are admitted, the length of their hospital stays, the diagnostic tests they undergo, and the financial costs of their treatment.
+Together, these records can reveal patterns in hospital utilisation, patient admissions, and billing activities that might otherwise go unnoticed.
 
 This project explores those patterns through an analysis of hospital admissions and billing data, shifting the focus from individual patient records to a broader view of hospital activity and financial performance.
 
@@ -118,6 +118,16 @@ Data quality checks and preparation were carried out in Microsoft Excel before t
 * Derived variables: Created two additional analytical columns, Length of Stay and Age Group, increasing the dataset from 15 to 17 columns.
 
 After removing duplicate records, the prepared dataset contained 50,000 records and 17 columns. It was subsequently used for SQL analysis and Power BI dashboard development.
+
+3. ## Methodology
+
+| Stage | Tool | Activities |
+|---|---|---|
+| 1 | *Microsoft Excel* | Imported and inspected the original 55,501 records; identified and removed 5,501 duplicate records across the 15 original columns; reviewed data consistency; and created two derived variables: Length of Stay and Age Group. The prepared dataset contained 50,000 records and 17 columns. |
+| 2 | *SQL Server (SSMS)* | Analysed eight business questions using SQL clauses and functions, including SELECT, FROM, WHERE, GROUP BY, ORDER BY, and CAST. Applied aggregate functions such as COUNT(), SUM() and AVG() to examine admission volumes, billing amounts and other relevant metrics. |
+| 3 | *Power BI* | Developed an interactive dashboard using data modelling, DAX and visualisation techniques. Incorporated KPI cards, charts and interactive filters to explore patient admissions, billing patterns, length of stay and test result distributions. |
+
+
 
 
 ## 2. Business Questions
