@@ -167,19 +167,31 @@ WHERE Medical_Condition IS NOT NULL
 GROUP BY Medical_Condition
 ORDER BY AdmissionCounts DESC;
 
+*Query Explanation:*
+
+- SELECT: Retrieves the medical condition and its corresponding admission count.
+- COUNT(*): Counts the number of records associated with each medical condition.
+- FROM: Specifies [Pjt (health)] as the source table.
+- WHERE: Excludes records with missing medical condition values.
+- GROUP BY: Groups records according to their medical condition.
+- ORDER BY DESC: Sorts the results from the highest admission count to the lowest.
+
+*Analytical Objective:*
+
+To identify the frequency of hospital admissions across different medical conditions and determine which conditions account for the highest number of recorded admissions.
+
+*Query Results:*
+
+The query returned admission counts across the different medical conditions, ranked from highest to lowest.
+
+*Key Findings:*
+
+- *Arthritis* recorded the highest number of admissions, with 8,439 records.
+- *Asthma* recorded the lowest number of admissions, with 8,272 records.
+
+The results show that the difference between the highest and lowest admission counts was 167 records, indicating a relatively narrow distribution of admissions across these two conditions.
 
 
-
-## 2. Business Questions
-The analysis answered the following business questions:
-1. How many admissions are there per medical condition, and which condition is most common?
-2. What is the average and total billing amount per medical condition?
-3. What is the average length of stay per admission type (Emergency, Elective, Urgent)?
-4. Which insurance provider covers the highest total billing?
-5. Which 10 hospitals have the highest total billing?
-6. How do admissions trend by year and month?
-7. What share of test results are Normal, Abnormal, and Inconclusive per medical condition?
-8. Which age group has the highest average billing?
 
 
 
