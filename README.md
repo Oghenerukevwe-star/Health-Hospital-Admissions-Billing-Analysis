@@ -191,6 +191,51 @@ The query returned admission counts across the different medical conditions, ran
 
 The results show that the difference between the highest and lowest admission counts was 167 records, indicating a relatively narrow distribution of admissions across these two conditions.
 
+#### Question 2: Average and Total Billing per Medical Condition
+
+*Business Question:* What is the average and total billing amount per medical condition?
+
+SELECT
+    Medical_Condition,
+    CAST(AVG(Billing_Amount) AS DECIMAL(18,2)) AS AverageBilling,
+    CAST(SUM(Billing_Amount) AS DECIMAL(18,2)) AS TotalBilling
+FROM [Pjt (health)]
+WHERE Medical_Condition IS NOT NULL
+AND Billing_Amount >= 0
+GROUP BY Medical_Condition
+ORDER BY TotalBilling DESC;
+
+*Query Explanation:*
+
+SELECT: Retrieves each medical condition alongside its average and total billing amounts.
+AVG(Billing_Amount): Calculates the average billing amount for each medical condition.
+SUM(Billing_Amount): Calculates the cumulative billing amount associated with each medical condition.
+CAST(... AS DECIMAL(18,2)): Formats the average and total billing amounts to two decimal places.
+FROM: Specifies [Pjt (health)] as the source table.
+WHERE: Excludes records with missing medical condition values.
+GROUP BY: Groups records according to their medical condition before calculating the average and total billing.
+ORDER BY DESC: Sorts the results by total billing, from the highest to the lowest.
+
+*Analytical Objective:*
+To compare the average and cumulative billing amounts across different medical conditions and identify which conditions account for the highest overall billing.
+
+*Query Results:*
+The query returned the average and total billing amounts for each medical condition, ranked according to total billing.
+
+*Key Findings:*
+
+The query returned the average and total positive billing amounts for the six medical conditions, excluding records with negative billing values.
+
+*Key Findings:*
+
+- *Diabetes* recorded the highest total billing of $215,093,967.17.
+- *Arthritis* followed with $215,083,225.47.
+- *Obesity* recorded $213,809,775.59 in total billing.
+- *Cancer* had the lowest total billing of $209,273,154.49.
+- *Diabetes* accounted for the highest cumulative billing, while the results placed Cancer at the lowest.
+
+Overall, the findings show that Diabetes accounted for the highest cumulative billing among the six medical conditions after excluding negative billing records.
+
 
 
 
