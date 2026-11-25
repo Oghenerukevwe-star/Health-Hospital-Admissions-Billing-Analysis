@@ -466,3 +466,65 @@ ORDER BY DESC: Sorts the results by average billing, from the highest to the low
 
 *Key Findings:*
 - Age Group 51–65 recorded the highest average billing of $25,689.45.
+- The four age groups were very close, with averages between about $25,545 and $25,689, a gap of less than 1%.
+
+
+## 5. Data Model and DAX Measures
+
+Power BI was connected to the cleaned Excel file. The data model contains two tables:
+
+	•	Pjt (health): the 49,999 admission records.
+	•	Calendar: a date table (Date, Year, Month, Month No, YearMonth) related to Date of Admission in a one-to-many relationship.
+
+A Billing Issue column was added in Power Query to flag the 96 negative billing records as "Negative Bill" and all others as "Normal Billing". The billing measures use it to exclude negative amounts.
+
+### Dax
+
+Total Admissions = COUNTROWS('Pjt (health)')
+
+Avg Stay = AVERAGE('Pjt (health)'[Days in Admission])
+
+Total Billed =
+CALCULATE(SUM('Pjt (health)'[Billing Amount]),
+    'Pjt (health)'[Billing Issue] = "Normal Billing")
+
+Avg Bill =
+CALCULATE(AVERAGE('Pjt (health)'[Billing Amount]),
+    'Pjt (health)'[Billing Issue] = "Normal Billing")
+
+Cost per Day =
+DIVIDE([Total Billed],
+    CALCULATE(SUM('Pjt (health)'[Days in Admission]),
+        'Pjt (health)'[Billing Issue] = "Normal Billing"))
+
+% Abnormal =
+DIVIDE(CALCULATE([Total Admissions],
+    'Pjt (health)'[Test Results] = "Abnormal"), [Total Admissions])
+
+On the Details page, these appear as Total Patients, Average Length of Stay, Average Billing per Patient, and Total Billing. Total Patients counts patient records (admissions), because the data has no patient ID.
+
+## 6. Dashboard and Analysis
+
+The dashboard has two pages. A dark navy sidebar holds the logo and page navigation, and slicers sit in the header band so every visual can be filtered.
+
+Page 1: Overview
+
+	•	KPI cards: total admissions, average stay, average bill, total billed, cost per day, and percent abnormal results
+	•	Admissions trend by month
+	•	Heatmap of admissions by month and year
+	•	Admissions by age group
+	•	Test results split
+
+Page 2: Details
+
+	•	KPI cards: Total Patients, Average Length of Stay, Average Billing per Patient, Total Billing
+	•	Admissions by medical condition
+	•	Billed by insurance provider
+	•	Admissions by month of year
+	•	Admissions by admission type (donut)
+	•	Test results by medical condition (100% stacked bar)
+	•	Top 10 hospitals by billing (table)
+	•	Billing by medical condition (table)
+	•	Average stay per admission type
+	•	Average billing by age group
+	•	Slicers: Year, Gender, Admission Type, and Insurance Provider
