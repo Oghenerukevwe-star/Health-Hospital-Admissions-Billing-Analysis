@@ -1,5 +1,5 @@
 # Health-Hospital-Admissions-Billing-Analysis
-### A Data Analytics Project Using Excel, SQL Server and Power BI
+### A Data Analytics Project Using Excel, SQL Server, and Power BI
 
 ## 📌 Project Overview
 An end-to-end data analytics project involving hospital admissions and billing data. The dataset initially contained **55,501 records**; I cleaned it in Microsoft Excel by removing duplicates, resulting in **50,000 records** for analysis.
@@ -55,15 +55,19 @@ SQL Server Management Studio (SSMS) was then used to investigate the dataset and
 
 ## 2. Data Description
 
-### Dataset Overview
+### Dataset Source & Overview
 
-The dataset used for this analysis contains hospital admission and billing records covering patient demographics, medical conditions, admission details, hospital information, insurance coverage, medication and diagnostic test results.
+The dataset used for this analysis was obtained from Kaggle:
+
+**[Healthcare Dataset – Prasad Patil](https://www.kaggle.com/datasets/prasad22/healthcare-dataset)**
+
+The dataset contains patient demographics, medical conditions, hospital admission details, billing information, medication records, and test results.
 
 The original dataset consisted of *55,501 records* and 15 columns. Following data cleaning and duplicate removal in Microsoft Excel, the dataset was reduced to *50,000 records*, which formed the basis for the subsequent SQL analysis and Power BI dashboard development.
 
 ### Dataset Variables
 
-The dataset initially contained 15 columns covering patient demographics, medical conditions, hospital information, admission details and billing records. 
+The dataset initially contained 15 columns covering patient demographics, medical conditions, hospital information, admission details, and billing records. 
 
 During data preparation, two additional columns were created to support further analysis:
 
