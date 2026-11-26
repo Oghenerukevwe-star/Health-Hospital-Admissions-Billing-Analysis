@@ -251,15 +251,15 @@ GROUP BY Admission_Type
 ORDER BY AverageLengthOfStay;
 
 *Query Explanation:*
-SELECT: Retrieves each admission type alongside its average length of stay.
-TRY_CAST([Days_in_Admission] AS DECIMAL(10,2)): Converts the Days_in_Admission values from NVARCHAR (text) to decimal numbers so they can be used in numerical calculations. Values that cannot be converted return NULL.
-AVG(): Calculates the average length of stay for each admission type using the converted numerical values.
-CAST(... AS DECIMAL(10,2)): Formats the calculated average length of stay to two decimal places.
-AS AverageLengthOfStay: Assigns a descriptive name to the calculated average column in the query results.
-FROM: Specifies [Pjt (health)] as the source table.
-WHERE: Excludes records with missing admission type values.
-GROUP BY: Groups records according to their admission type (Emergency, Elective, and Urgent) before calculating the average length of stay.
-ORDER BY: Sorts the results by average length of stay, from the lowest to the highest.
+* SELECT: Retrieves each admission type alongside its average length of stay.
+* TRY_CAST([Days_in_Admission] AS DECIMAL(10,2)): Converts the Days_in_Admission values from NVARCHAR (text) to decimal numbers so they can be used in numerical calculations. Values that cannot be converted return NULL.
+* AVG(): Calculates the average length of stay for each admission type using the converted numerical values.
+* CAST(... AS DECIMAL(10,2)): Formats the calculated average length of stay to two decimal places.
+* AS AverageLengthOfStay: Assigns a descriptive name to the calculated average column in the query results.
+* FROM: Specifies [Pjt (health)] as the source table.
+* WHERE: Excludes records with missing admission type values.
+* GROUP BY: Groups records according to their admission type (Emergency, Elective, and Urgent) before calculating the average length of stay.
+* ORDER BY: Sorts the results by average length of stay, from the lowest to the highest.
 
 *Analytical Objective:*
 To compare the average length of hospital stay across different admission types and identify which admission category has the longest average patient stay.
@@ -288,12 +288,12 @@ GROUP BY Insurance_Provider
 ORDER BY TotalBilling DESC;
 
 *Query Explanation:*
-SELECT TOP 1: Retrieves only the insurance provider with the highest total billing amount.
-SUM(Billing_Amount): Calculates the cumulative billing amount associated with each insurance provider.
-FROM: Specifies [Pjt (health)] as the source table.
-WHERE: Excludes records with missing insurance provider values and negative billing amounts to focus on positive billing records.
-GROUP BY: Groups records according to their insurance provider before calculating the total billing amount.
-ORDER BY DESC: Sorts the results by total billing, from the highest to the lowest, ensuring that the provider with the highest total billing appears first.
+* SELECT TOP 1: Retrieves only the insurance provider with the highest total billing amount.
+* SUM(Billing_Amount): Calculates the cumulative billing amount associated with each insurance provider.
+* FROM: Specifies [Pjt (health)] as the source table.
+* WHERE: Excludes records with missing insurance provider values and negative billing amounts to focus on positive billing records.
+* GROUP BY: Groups records according to their insurance provider before calculating the total billing amount.
+* ORDER BY DESC: Sorts the results by total billing, from the highest to the lowest, ensuring that the provider with the highest total billing appears first.
 
 
 
@@ -322,12 +322,12 @@ ORDER BY TotalBilling DESC;
 
 *Query Explanation:*
 
-SELECT TOP 10: Retrieves only the 10 hospitals with the highest total billing amounts.
-SUM(Billing_Amount): Calculates the cumulative billing amount associated with each hospital.
-FROM: Specifies [Pjt (health)] as the source table.
-WHERE: Excludes records with missing hospital names and negative billing amounts to focus on positive billing records.
-GROUP BY: Groups records according to their hospital names before calculating the total billing amount.
-ORDER BY DESC: Sorts the results by total billing, from the highest to the lowest, ensuring that the 10 hospitals with the highest cumulative billing are returned.
+* SELECT TOP 10: Retrieves only the 10 hospitals with the highest total billing amounts.
+* SUM(Billing_Amount): Calculates the cumulative billing amount associated with each hospital.
+* FROM: Specifies [Pjt (health)] as the source table.
+* WHERE: Excludes records with missing hospital names and negative billing amounts to focus on positive billing records.
+* GROUP BY: Groups records according to their hospital names before calculating the total billing amount.
+* ORDER BY DESC: Sorts the results by total billing, from the highest to the lowest, ensuring that the 10 hospitals with the highest cumulative billing are returned.
 
 *Query Results:*
 The query returned the top 10 hospitals ranked according to their total billing amounts, excluding records with negative billing values.
@@ -363,19 +363,19 @@ ORDER BY
 
 *Query Explanation:*
 
-SELECT: Retrieves the admission year, admission month, and corresponding number of admissions.
-YEAR(Date_of_Admission): Extracts the year from each admission date to allow admissions to be analysed annually.
-MONTH(Date_of_Admission): Extracts the month from each admission date to allow admissions to be analysed monthly.
-COUNT(*): Counts the number of admission records within each year and month.
-FROM: Specifies [Pjt (health)] as the source table.
-WHERE: Excludes records with missing admission dates to ensure that only valid dates are included in the analysis.
-GROUP BY: Groups admission records by both year and month, allowing the number of admissions to be calculated for each month within each year.
-ORDER BY ASC: Sorts the results chronologically, starting with the earliest year and proceeding through each month.
+* SELECT: Retrieves the admission year, admission month, and corresponding number of admissions.
+* YEAR(Date_of_Admission): Extracts the year from each admission date to allow admissions to be analysed annually.
+* MONTH(Date_of_Admission): Extracts the month from each admission date to allow admissions to be analysed monthly.
+* COUNT(*): Counts the number of admission records within each year and month.
+* FROM: Specifies [Pjt (health)] as the source table.
+* WHERE: Excludes records with missing admission dates to ensure that only valid dates are included in the analysis.
+* GROUP BY: Groups admission records by both year and month, allowing the number of admissions to be calculated for each month within each year.
+* GROUP BY: Groups admission records by both year and month, allowing the number of admissions to be calculated for each month within each year.
+* ORDER BY ASC: Sorts the results chronologically, starting with the earliest year and proceeding through each month.
 
 *Query Results:*
 The query returned the number of admissions recorded for each year and month, arranged in chronological order.
 
-*Query Results:*
 August 2020 recorded the highest monthly admission count, with 912 admissions.
 October 2019 followed with 905 admissions.
 July 2020 recorded 901 admissions, while August 2023 recorded 871 admissions.
@@ -412,16 +412,16 @@ ORDER BY Medical_Condition ASC;
 
 *Query Explanation:*
 
-SELECT: Retrieves each medical condition alongside the total number of patient records and the percentage distribution of test results.
-COUNT(*): Counts the total number of records for each medical condition.
-CASE WHEN: Checks each test result and assigns a value of 1 when it matches the specified category (Normal, Abnormal or Inconclusive), and 0 otherwise.
-SUM(): Adds the matching values for each test-result category to determine the number of records in that category.
-SUM(...) * 100.0 / COUNT(*): Calculates the percentage of each test-result category by dividing its count by the total records for that medical condition and multiplying by 100. The use of 100.0 ensures decimal calculation rather than integer division.
-CAST(... AS DECIMAL(10,2)): Formats the calculated percentages to two decimal places.
-FROM: Specifies [Pjt (health)] as the source table.
-WHERE: Excludes records with missing medical condition or test result values to ensure that only complete records are included in the analysis.
-GROUP BY: Groups records according to their medical condition before calculating the total records and percentage distribution of test results.
-ORDER BY: Sorts the results alphabetically by medical condition.
+* SELECT: Retrieves each medical condition alongside the total number of patient records and the percentage distribution of test results.
+* COUNT(*): Counts the total number of records for each medical condition.
+* CASE WHEN: Checks each test result and assigns a value of 1 when it matches the specified category (Normal, Abnormal or Inconclusive), and 0 otherwise.
+* SUM(): Adds the matching values for each test-result category to determine the number of records in that category.
+* SUM(...) * 100.0 / COUNT(*): Calculates the percentage of each test-result category by dividing its count by the total records for that medical condition and multiplying by 100. The use of 100.0 ensures decimal calculation rather than integer division.
+* CAST(... AS DECIMAL(10,2)): Formats the calculated percentages to two decimal places.
+* FROM: Specifies [Pjt (health)] as the source table.
+* WHERE: Excludes records with missing medical condition or test result values to ensure that only complete records are included in the analysis.
+* GROUP BY: Groups records according to their medical condition before calculating the total records and percentage distribution of test results.
+* ORDER BY: Sorts the results alphabetically by medical condition.
 
 *Query Results:*
 
@@ -453,13 +453,13 @@ ORDER BY AverageBilling DESC;
 
 *Query Explanation:*
 
-SELECT TOP 1: Retrieves only the age group with the highest average billing amount.
-AVG(Billing_Amount): Calculates the average billing amount for each age group.
-CAST(... AS DECIMAL(10,2)): Formats the calculated average billing amount to two decimal places.
-FROM: Specifies [Pjt (health)] as the source table.
-WHERE: Excludes records with missing age-group values and negative billing amounts to focus on positive billing records.
-GROUP BY: Groups records according to their age groups before calculating the average billing amount.
-ORDER BY DESC: Sorts the results by average billing, from the highest to the lowest, ensuring that the age group with the highest average billing appears first.
+* SELECT TOP 1: Retrieves only the age group with the highest average billing amount.
+* AVG(Billing_Amount): Calculates the average billing amount for each age group.
+* CAST(... AS DECIMAL(10,2)): Formats the calculated average billing amount to two decimal places.
+* FROM: Specifies [Pjt (health)] as the source table.
+* WHERE: Excludes records with missing age-group values and negative billing amounts to focus on positive billing records.
+* GROUP BY: Groups records according to their age groups before calculating the average billing amount.
+* ORDER BY DESC: Sorts the results by average billing, from the highest to the lowest, ensuring that the age group with the highest average billing appears first.
 
 *Query Results:* The query returned one record, identifying the age group with the highest average billing amount after excluding negative billing values.
 
