@@ -493,6 +493,10 @@ On the Details page, these appear as Total Patients, Average Length of Stay, Ave
 
 ## 6. Dashboard and Analysis
 
+### Overview Page
+<img width="581" height="338" alt="Health Overview Dashboard" src="https://github.com/user-attachments/assets/4d79d66f-47de-4211-8452-4943dd541f1f" />
+
+
 The dashboard has two pages. A dark navy sidebar holds the logo and page navigation, and slicers sit in the header band so every visual can be filtered.
 
 Page 1: Overview
