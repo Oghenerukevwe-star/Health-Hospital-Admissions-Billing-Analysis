@@ -216,8 +216,6 @@ ORDER BY TotalBilling DESC;
 * GROUP BY: Groups records according to their medical condition before calculating the average and total billing.
 * ORDER BY DESC: Sorts the results by total billing, from the highest to the lowest.
 
-*Analytical Objective:*
-To compare the average and cumulative billing amounts across different medical conditions and identify which conditions account for the highest overall billing.
 
 *Query Results:*
 The query returned the average and total billing amounts for each medical condition, ranked according to total billing.
@@ -232,13 +230,12 @@ The query returned the average and total positive billing amounts for the six me
 - *Cancer* had the lowest total billing of $209,273,154.49.
 - *Diabetes* accounted for the highest cumulative billing, while the results placed Cancer at the lowest.
 
-Overall, the findings show that Diabetes accounted for the highest cumulative billing among the six medical conditions after excluding negative billing records.
+Overall, after excluding negative billing records, Diabetes accounted for the highest cumulative billing among the six medical conditions.
 
 
 #### Question 3: Average Length of Stay per Admission Type
 
 *Business Question:* What is the average length of stay per admission type (Emergency, Elective, Urgent)
-
 
 SELECT Admission_Type,
        CAST(
@@ -261,8 +258,6 @@ ORDER BY AverageLengthOfStay;
 * GROUP BY: Groups records according to their admission type (Emergency, Elective, and Urgent) before calculating the average length of stay.
 * ORDER BY: Sorts the results by average length of stay, from the lowest to the highest.
 
-*Analytical Objective:*
-To compare the average length of hospital stay across different admission types and identify which admission category has the longest average patient stay.
 
 *Query Results:*
 The query returned the average length of stay for each admission type, ranked from the lowest to the highest average duration.
@@ -295,10 +290,6 @@ ORDER BY TotalBilling DESC;
 * GROUP BY: Groups records according to their insurance provider before calculating the total billing amount.
 * ORDER BY DESC: Sorts the results by total billing, from the highest to the lowest, ensuring that the provider with the highest total billing appears first.
 
-
-
-*Analytical Objective:*
-To compare the total billing amounts covered by different insurance providers and identify the provider with the highest cumulative billing.
 
 *Query Results:*
 The query returned one record, identifying the insurance provider with the highest total billing after excluding negative billing amounts.
@@ -333,16 +324,17 @@ ORDER BY TotalBilling DESC;
 The query returned the top 10 hospitals ranked according to their total billing amounts, excluding records with negative billing values.
 
 *Key Findings:*
-Smith Ltd recorded the highest total billing of $1,812,861.63.
-Smith LLC ranked second with $1,563,270.47.
-Smith PLC followed with $1,519,573.20.
-Brown Inc ranked fourth with $1,507,516.89.
-Johnson PLC recorded $1,390,627.15.
-Smith Inc ranked sixth with $1,350,709.35.
-Johnson Inc followed with $1,348,487.63.
-Johnson LLC recorded $1,300,312.51.
-Williams LLC ranked ninth with $1,265,223.05.
-Johnson Ltd recorded the lowest total billing among the top 10 hospitals, at $1,157,531.44.
+* Smith Ltd recorded the highest total billing of $1,812,861.63.
+* Smith LLC ranked second with $1,563,270.47.
+* Smith PLC followed with $1,519,573.20.
+* Brown Inc ranked fourth with $1,507,516.89.
+* Johnson PLC recorded $1,390,627.15.
+* Smith Inc ranked sixth with $1,350,709.35.
+* Johnson Inc followed with $1,348,487.63.
+* Johnson LLC recorded $1,300,312.51.
+* Williams LLC ranked ninth with $1,265,223.05.
+* Johnson Ltd recorded the lowest total billing among the top 10 hospitals, at $1,157,531.44.
+
 Overall, Smith Ltd recorded the highest cumulative billing among the hospitals analysed, while Johnson Ltd occupied the tenth position in the ranking.
 
 #### Question 6: Admission Trend by Year and Month
@@ -376,6 +368,7 @@ ORDER BY
 *Query Results:*
 The query returned the number of admissions recorded for each year and month, arranged in chronological order.
 
+*Key Findings:*
 August 2020 recorded the highest monthly admission count, with 912 admissions.
 October 2019 followed with 905 admissions.
 July 2020 recorded 901 admissions, while August 2023 recorded 871 admissions.
