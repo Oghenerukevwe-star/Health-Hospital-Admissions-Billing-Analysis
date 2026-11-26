@@ -232,6 +232,18 @@ Overall, after excluding negative billing records, Diabetes accounted for the hi
 
 *Business Question:* What is the average length of stay per admission type (Emergency, Elective, Urgent)
 
+sql
+SELECT
+    Admission_Type,
+    CAST(
+        AVG(TRY_CAST([Days_in_Admission] AS DECIMAL(10,2)))
+        AS DECIMAL(10,2)
+    ) AS AverageLengthOfStay
+FROM [Pjt (health)]
+WHERE Admission_Type IS NOT NULL
+GROUP BY Admission_Type
+ORDER BY AverageLengthOfStay;
+
 SELECT Admission_Type,
        CAST(
            AVG(TRY_CAST([Days_in_Admission] AS DECIMAL(10,2)))
