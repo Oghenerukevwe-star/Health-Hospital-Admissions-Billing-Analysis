@@ -176,12 +176,7 @@ ORDER BY AdmissionCounts DESC;
 - GROUP BY: Groups records according to their medical condition.
 - ORDER BY DESC: Sorts the results from the highest admission count to the lowest.
 
-*Analytical Objective:*
-
-To identify the frequency of hospital admissions across different medical conditions and determine which conditions account for the highest number of recorded admissions.
-
 *Query Results:*
-
 The query returned admission counts across the different medical conditions, ranked from highest to lowest.
 
 *Key Findings:*
@@ -369,12 +364,13 @@ ORDER BY
 The query returned the number of admissions recorded for each year and month, arranged in chronological order.
 
 *Key Findings:*
-August 2020 recorded the highest monthly admission count, with 912 admissions.
-October 2019 followed with 905 admissions.
-July 2020 recorded 901 admissions, while August 2023 recorded 871 admissions.
-Admission volumes generally remained within the range of 800–900 admissions per month across most of the observed period.
-February generally recorded lower admission figures compared with several other months. The lowest February count was 693 admissions in 2022.
-May 2024 recorded only 190 admissions, the lowest figure in the dataset provided.
+* August 2020 recorded the highest monthly admission count, with 912 admissions.
+* October 2019 followed with 905 admissions.
+* July 2020 recorded 901 admissions, while August 2023 recorded 871 admissions.
+* Admission volumes generally remained within the range of 800–900 admissions per month across most of the observed period.
+* February generally recorded lower admission figures compared with several other months. The lowest February count was 693 admissions in 2022.
+* May 2024 recorded only 190 admissions, the lowest figure in the dataset provided.
+  
 Overall, the results suggest that hospital admissions remained relatively stable across the observed years, with most months recording between 800 and 900 admissions. However, the sharp decline to 190 admissions in May 2024 requires further investigation.
 
 *Data Observation:* The dataset covers only May–December 2019 and January–May 2024, rather than complete calendar years. Also, the unusually low May 2024 figure may indicate incomplete monthly records. Therefore, yearly totals should not be compared directly without accounting for these differences.
@@ -421,12 +417,12 @@ ORDER BY Medical_Condition ASC;
 The query returns the total number of records and the percentage of Normal, Abnormal, and Inconclusive test results for each medical condition.
 
 *Key Findings:*
-Arthritis: Abnormal results recorded the highest share at 34.46%, while Normal results accounted for 32.49%.
-Asthma: Normal results had the highest share at 34.50%, followed by Inconclusive results at 32.89%.
-Cancer: Abnormal results recorded the highest share at 33.73%.
-Diabetes: Abnormal results had the highest share at 33.77%, followed by Normal results at 33.24%.
-Hypertension: Normal results recorded the highest share at 33.77%, while Inconclusive results accounted for 33.53%.
-Obesity: Abnormal results had the highest share at 33.98%.
+* Arthritis: Abnormal results recorded the highest share at 34.46%, while Normal results accounted for 32.49%.
+* Asthma: Normal results had the highest share at 34.50%, followed by Inconclusive results at 32.89%.
+* Cancer: Abnormal results recorded the highest share at 33.73%.
+* Diabetes: Abnormal results had the highest share at 33.77%, followed by Normal results at 33.24%.
+* Hypertension: Normal results recorded the highest share at 33.77%, while Inconclusive results accounted for 33.53%.
+* Obesity: Abnormal results had the highest share at 33.98%.
 
 Abnormal results recorded the highest percentage in four of the six medical conditions: Arthritis, Cancer, Diabetes, and Obesity. Normal results had the highest share for Asthma and Hypertension.
 
