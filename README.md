@@ -2,7 +2,7 @@
 ### A Data Analytics Project Using Excel, SQL Server, and Power BI
 
 ## 📌 Project Overview
-An end-to-end data analytics project involving hospital admissions and billing data. The dataset initially contained **55,500 records**; I cleaned it in Microsoft Excel by removing duplicates, resulting in **49,000 records** for analysis.
+An end-to-end data analytics project involving hospital admissions and billing data. The dataset initially contained **55,500 records**; I cleaned it in Microsoft Excel by removing duplicates, resulting in **49,999 records** for analysis.
 
 I used SQL Server to query the cleaned dataset and answer eight business questions, and Power BI to develop an interactive dashboard exploring patient admissions, billing costs, length of hospital stay, and the distribution of medical test results.
 
@@ -40,7 +40,7 @@ This project explores those patterns through an analysis of hospital admissions 
 
 The objective of this project was to investigate what the hospital data reveals about patient admissions, billing costs, length of stay, and medical test results, using data analytics to answer eight business questions.
 
-The analysis began with **55,501 records**, which were examined and cleaned in Microsoft Excel, resulting in a final dataset of **50,000 records**.
+The analysis began with **55,500 records**, which were examined and cleaned in Microsoft Excel, resulting in a final dataset of **49,999 records**.
 
 SQL Server Management Studio (SSMS) was then used to investigate the dataset and answer the eight business questions. Finally, Power BI was used to develop an interactive dashboard that brings the findings together and makes the results easier to explore and interpret.
 
@@ -61,7 +61,7 @@ The dataset used for this analysis was obtained from Kaggle:
 
 The dataset contains patient demographics, medical conditions, hospital admission details, billing information, medication records, and test results.
 
-The original dataset consisted of *55,500 records* and 15 columns. Following data cleaning and duplicate removal in Microsoft Excel, the dataset was reduced to *49,000 records*, which formed the basis for the subsequent SQL analysis and Power BI dashboard development.
+The original dataset consisted of *55,500 records* and 15 columns. Following data cleaning and duplicate removal in Microsoft Excel, the dataset was reduced to *49,999 records*, which formed the basis for the subsequent SQL analysis and Power BI dashboard development.
 
 ### Dataset Variables
 
@@ -91,7 +91,7 @@ During data preparation, two additional columns were created to support further 
 
 ### Derived Columns
 
-Two additional columns were created during data preparation to support more detailed analysis.
+Two additional columns were created during data preparation to support more detailed analysis, increasing the total columns to 17.
 
 **Length of Stay**: Calculated using the difference between the discharge date and admission date. This column supports the analysis of patient hospitalisation duration.
 
@@ -116,7 +116,7 @@ Two additional columns were created during data preparation to support more deta
 
 Data quality checks and preparation were carried out in Microsoft Excel before the dataset was imported into SQL Server for analysis. The following checks and actions were performed:
 
-* Duplicate records: Identified and removed 5,501 duplicate entries by comparing records across all 15 original columns, reducing the dataset from 55,501 to 50,000 unique records.
+* Duplicate records: Identified and removed 5,501 duplicate entries by comparing records across all 15 original columns, reducing the dataset from 55,500 to 49,999 unique records.
 * Data consistency: Reviewed key fields, including patient demographics, admission and discharge dates, billing amounts, and medical information.
 * Derived variables: Created two additional analytical columns, Length of Stay and Age Group, increasing the dataset from 15 to 17 columns.
 
@@ -126,13 +126,13 @@ After removing duplicate records, the prepared dataset contained 50,000 records 
 
 | Stage | Tool | Activities |
 |---|---|---|
-| 1 | *Microsoft Excel* | Imported and inspected the original 55,501 records; identified and removed 5,501 duplicate records across the 15 original columns; reviewed data consistency; and created two derived variables: Length of Stay and Age Group. The prepared dataset contained 50,000 records and 17 columns. |
+| 1 | *Microsoft Excel* | Imported and inspected the original 55,500 records; identified and removed 5,501 duplicate records across the 15 original columns; reviewed data consistency; and created two derived variables: Length of Stay and Age Group. The prepared dataset contained 49,999 records and 17 columns. |
 | 2 | *SQL Server (SSMS)* | Analysed eight business questions using SQL clauses and functions, including SELECT, FROM, WHERE, GROUP BY, ORDER BY, and CAST. Applied aggregate functions such as COUNT(), SUM() and AVG() to examine admission volumes, billing amounts and other relevant metrics. |
 | 3 | *Power BI* | Developed an interactive dashboard using data modelling, DAX and visualisation techniques. Incorporated KPI cards, charts and interactive filters to explore patient admissions, billing patterns, length of stay and test result distributions. |
 
 
 ## 4. SQL Analysis
-The cleaned dataset, containing 50,000 records and 17 columns, was imported into SQL Server for further analysis using SQL Server Management Studio (SSMS).
+The cleaned dataset, containing 49,999 records and 17 columns, was imported into SQL Server for further analysis using SQL Server Management Studio (SSMS).
 
 The analysis was guided by eight business questions designed to examine patient admission patterns, billing distribution, hospital activity, length of stay, and clinical test results.
 
