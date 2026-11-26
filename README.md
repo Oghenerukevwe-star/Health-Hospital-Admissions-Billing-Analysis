@@ -561,7 +561,6 @@ These are suggestions drawn from the patterns above, not proven causes.
 
 ## 10. Repository Structure
 
-
 ├── README.md
 ├── data/
 │   └── Project_health_clean_excel_data.xlsx
@@ -582,8 +581,6 @@ The main finding is that the data is very evenly spread. No single condition, in
 ## 12. Author
 
 **Oghenerukevwe Success Asore**
-Linkedin:
-Portfolio:
 
 
 
