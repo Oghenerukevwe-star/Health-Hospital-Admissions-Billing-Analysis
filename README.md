@@ -19,13 +19,12 @@ I used SQL Server to query the cleaned dataset and answer eight business questio
 2. [Data Description](#2-data-description)
 3. [Methodology](#3-methodology)
 4. [SQL Analysis](#4-sql-analysis)
-5. [Data Model and DAX Measures](#6-data-model-and-dax-measures)
-6. [Dashboard and Analysis](#7-dashboard-and-analysis)
-7. [Key Insights](#8-key-insights)
-8. [Recommendations](#9-recommendations)
-9. [Limitations](#10-limitations)
-10. [Conclusion](#11-conclusion)
-11. [Author](#12-author)
+5. [Data Model and DAX Measures](#5-data-model-and-dax-measures)
+6. [Dashboard and Analysis](#6-dashboard-and-analysis)
+7. [Recommendations](#7-recommendations)
+8. [Limitations](#8-limitations)
+9. [Conclusion](#9-conclusion)
+10. [Author](#10-author)
 
 
 ## 1. Introduction
@@ -208,14 +207,14 @@ ORDER BY TotalBilling DESC;
 
 *Query Explanation:*
 
-SELECT: Retrieves each medical condition alongside its average and total billing amounts.
-AVG(Billing_Amount): Calculates the average billing amount for each medical condition.
-SUM(Billing_Amount): Calculates the cumulative billing amount associated with each medical condition.
-CAST(... AS DECIMAL(18,2)): Formats the average and total billing amounts to two decimal places.
-FROM: Specifies Pjt (health) as the source table.
-WHERE: Excludes records with missing medical condition values.
-GROUP BY: Groups records according to their medical condition before calculating the average and total billing.
-ORDER BY DESC: Sorts the results by total billing, from the highest to the lowest.
+* SELECT: Retrieves each medical condition alongside its average and total billing amounts.
+* AVG(Billing_Amount): Calculates the average billing amount for each medical condition.
+* SUM(Billing_Amount): Calculates the cumulative billing amount associated with each medical condition.
+* CAST(... AS DECIMAL(18,2)): Formats the average and total billing amounts to two decimal places.
+* FROM: Specifies Pjt (health) as the source table.
+* WHERE: Excludes records with missing medical condition values.
+* GROUP BY: Groups records according to their medical condition before calculating the average and total billing.
+* ORDER BY DESC: Sorts the results by total billing, from the highest to the lowest.
 
 *Analytical Objective:*
 To compare the average and cumulative billing amounts across different medical conditions and identify which conditions account for the highest overall billing.
@@ -559,26 +558,14 @@ These are suggestions drawn from the patterns above, not proven causes.
 	•	The 96 negative billing amounts are unexplained and are excluded from billing measures.
 	•	May 2019 and May 2024 are partial months.
 
-## 10. Repository Structure
 
-├── README.md
-├── data/
-│   └── Project_health_clean_excel_data.xlsx
-├── sql/
-│   └── queries.sql
-├── dashboard/
-│   └── Health power bi project.pbix
-└── images/
-    ├── overview.png
-    └── details.png
-
-## 11. Conclusion
+## 9. Conclusion
 
 This project took hospital admissions and billing data from raw records to a finished dashboard. Excel was used to clean the data, SQL Server to answer eight business questions, and Power BI to present the results in an interactive report.
 
 The main finding is that the data is very evenly spread. No single condition, insurer, admission type, or age group stands out, and monthly admissions stay steady. The dashboard gives a clear, filterable view of admissions, billing, length of stay, and test results, and it is a solid base for deeper analysis once patient-level identifiers and cost drivers are available.
 
-## 12. Author
+## 10. Author
 
 **Oghenerukevwe Success Asore**
 
