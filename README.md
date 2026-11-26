@@ -122,7 +122,7 @@ Data quality checks and preparation were carried out in Microsoft Excel before t
 
 After removing duplicate records, the prepared dataset contained 50,000 records and 17 columns. It was subsequently used for SQL analysis and Power BI dashboard development.
 
-3. ## Methodology
+## 3. Methodology
 
 | Stage | Tool | Activities |
 |---|---|---|
