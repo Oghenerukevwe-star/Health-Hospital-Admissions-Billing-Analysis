@@ -493,8 +493,10 @@ On the Details page, these appear as Total Patients, Average Length of Stay, Ave
 
 ## 6. Dashboard and Analysis
 
-### Overview Page
-<img width="581" height="338" alt="Health Overview Dashboard" src="https://github.com/user-attachments/assets/4d79d66f-47de-4211-8452-4943dd541f1f" />
+
+### Overview Page 
+<img width="584" height="339" alt="Health Overview Dashboard (2)" src="https://github.com/user-attachments/assets/e66862e6-af3e-441f-9b8d-896439a7512f" />
+
 
 ### Details Page
 <img width="505" height="338" alt="Health Details Dashboard" src="https://github.com/user-attachments/assets/56f87f50-1850-408f-b28f-12d4b5cbb4d9" />
